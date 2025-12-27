@@ -1,0 +1,116 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3d72b4, #525252);
+  overflow: hidden;
+}
+
+/* ===============================
+   GLASS CONTAINER
+================================ */
+.container {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+.magic {
+  background: linear-gradient(135deg, #000000, #0c3055);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  top: 25px;
+  letter-spacing: 1px;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.magic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(135deg, #530624, #0c3055);
+}
+
+.magic:active {
+  transform: scale(0.95);
+}
+
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  transition: 0.6s ease;
+  perspective: 1000px;
+}
+
+
+.boxes:hover {
+  width: 620px;
+  height: 620px;
+}
+
+
+.box {
+  width: 125px;
+  height: 125px;
+  margin: 6px;
+  background-image: url('https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  position: relative;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.box:hover {
+  transform: rotateY(20deg) rotateX(15deg) scale(1.08);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45);
+}
+
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  background: linear-gradient(#f6e58d, #f9ca24);
+  transform: skewY(45deg);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  background: linear-gradient(#f9ca24, #f6e58d);
+  transform: skewX(45deg);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+}
